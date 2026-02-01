@@ -3,22 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MDL 2026 - Roses de la Saint-Valentin</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Rose MDL</title>
     <style>
-        :root {
-            --primary: #e63946;
-            --primary-light: #f28482;
-            --secondary: #a8dadc;
-            --dark: #1d3557;
-            --light: #f1faee;
-            --gray: #6c757d;
-            --success: #2a9d8f;
-            --shadow: 0 10px 20px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,9 +12,8 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--dark);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -38,599 +23,396 @@
 
         .container {
             width: 100%;
-            max-width: 900px;
-            background-color: white;
+            max-width: 500px;
+            background: white;
             border-radius: 20px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.1);
             overflow: hidden;
-            position: relative;
-        }
-
-        .header {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 25px 30px;
-            text-align: center;
-            position: relative;
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .logo {
-            max-width: 120px;
-            max-height: 80px;
-            border-radius: 10px;
-            object-fit: contain;
-            border: 3px solid white;
-        }
-
-        .logo-placeholder {
-            width: 120px;
-            height: 80px;
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 3px solid white;
-        }
-
-        .logo-placeholder i {
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-section {
-            padding: 30px;
-        }
-
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .step-indicator:before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: #eee;
-            z-index: 1;
+            padding: 0;
         }
 
         .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-circle {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: #eee;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-            margin-bottom: 8px;
-            transition: var(--transition);
-        }
-
-        .step.active .step-circle {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .step.completed .step-circle {
-            background-color: var(--success);
-            color: white;
-        }
-
-        .step-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gray);
-        }
-
-        .step.active .step-label {
-            color: var(--primary);
-        }
-
-        .form-step {
             display: none;
-            animation: fadeIn 0.5s ease;
+            padding: 40px 30px;
+            text-align: center;
         }
 
-        .form-step.active {
+        .step.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .form-title {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--dark);
-            text-align: center;
+        h2 {
+            color: #e63946;
+            font-size: 24px;
+            margin-bottom: 30px;
             font-weight: 600;
         }
 
-        .form-group {
+        .input-group {
             margin-bottom: 25px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .form-control {
+        input, textarea {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e9ecef;
+            border: 2px solid #ffe6e6;
             border-radius: 10px;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: #fffafa;
         }
 
-        .form-control:focus {
+        input:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+            border-color: #e63946;
+            background: white;
         }
 
-        textarea.form-control {
-            min-height: 150px;
+        textarea {
+            min-height: 120px;
             resize: vertical;
         }
 
-        .char-counter {
+        .char-count {
             text-align: right;
-            font-size: 0.85rem;
-            color: var(--gray);
+            font-size: 14px;
+            color: #999;
             margin-top: 5px;
         }
 
-        .char-counter.warning {
-            color: #e67e22;
-        }
-
-        .char-counter.error {
-            color: var(--primary);
-            font-weight: 500;
+        .char-count.warning {
+            color: #ff6b6b;
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 15px 40px;
             border: none;
             border-radius: 10px;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Poppins', sans-serif;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            transition: all 0.3s;
+            margin: 10px;
+            min-width: 140px;
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background: #e63946;
             color: white;
         }
 
         .btn-primary:hover {
-            background-color: #d32f3d;
+            background: #d32f3d;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
         }
 
         .btn-secondary {
-            background-color: #e9ecef;
-            color: var(--dark);
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #dee2e6;
         }
 
         .btn-secondary:hover {
-            background-color: #dee2e6;
-            transform: translateY(-2px);
+            background: #e9ecef;
         }
 
-        .btn-success {
-            background-color: var(--success);
-            color: white;
-        }
-
-        .btn-success:hover {
-            background-color: #21867a;
-            transform: translateY(-2px);
-        }
-
-        .btn-full {
-            width: 100%;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        /* Preview Section Styles */
-        .preview-container {
-            background-color: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-        }
-
-        .paper-preview {
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            margin: 0 auto;
-            max-width: 600px;
-        }
-
-        .paper-front, .paper-back {
-            padding: 40px;
-            min-height: 300px;
+        .preview-paper {
+            background: white;
+            border: 2px dashed #ffcccc;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
 
         .paper-front {
-            border-bottom: 2px dashed #dee2e6;
-        }
-
-        .paper-logo {
-            max-width: 100px;
             margin-bottom: 30px;
         }
 
-        .recipient-name {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-align: center;
-            max-width: 80%;
-            margin: 0 auto;
-            word-wrap: break-word;
-        }
-
-        .message-content {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            text-align: center;
-            line-height: 1.6;
-            max-width: 90%;
-            margin: 0 auto;
-            word-wrap: break-word;
-            color: var(--dark);
-        }
-
-        .preview-title {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 15px;
-            text-align: center;
+        .logo-preview {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e63946, #ff6b6b);
+            border-radius: 50%;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            color: white;
+            font-size: 24px;
         }
 
-        .preview-title i {
-            color: var(--primary);
+        .recipient-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e63946;
+            margin-top: 10px;
         }
 
-        /* Confirmation Section */
-        .confirmation-section {
+        .message-content {
+            font-size: 20px;
+            color: #333;
+            line-height: 1.5;
             text-align: center;
-            padding: 40px 30px;
+            max-width: 90%;
+        }
+
+        .confirmation {
+            padding: 40px 20px;
         }
 
         .confirmation-icon {
             width: 80px;
             height: 80px;
-            background-color: var(--success);
-            color: white;
+            background: #2ecc71;
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             margin: 0 auto 25px;
-            font-size: 2.5rem;
+            color: white;
+            font-size: 40px;
         }
 
-        .confirmation-title {
-            font-size: 1.8rem;
-            color: var(--dark);
+        .confirmation h3 {
+            color: #2ecc71;
+            font-size: 24px;
             margin-bottom: 15px;
-            font-weight: 600;
         }
 
-        .confirmation-text {
-            color: var(--gray);
+        .confirmation p {
+            color: #666;
             margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
         }
 
-        /* Footer */
-        .footer {
-            padding: 20px;
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.85rem;
-            border-top: 1px solid #e9ecef;
+        .error {
+            color: #e63946;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .container {
                 border-radius: 15px;
             }
             
-            .header {
-                padding: 20px;
+            .step {
+                padding: 30px 20px;
             }
             
-            .header h1 {
-                font-size: 1.5rem;
+            h2 {
+                font-size: 22px;
             }
             
-            .form-section {
-                padding: 20px;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-            
-            .paper-front, .paper-back {
-                padding: 25px;
-            }
-            
-            .recipient-name {
-                font-size: 2rem;
-            }
-            
-            .message-content {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .step-label {
-                font-size: 0.75rem;
-            }
-            
-            .recipient-name {
-                font-size: 1.8rem;
-            }
-            
-            .message-content {
-                font-size: 1.3rem;
+            .btn {
+                padding: 12px 30px;
+                min-width: 120px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="logo-container">
-                <!-- Logo MDL 2026 - Remplacez par votre image si disponible -->
-                <div class="logo-placeholder">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <!-- Si vous avez le logo, utilisez ceci à la place :
-                <img src="Screenshot_2025-12-19-11-51-24-586_com.whatsapp-edit.jpg" alt="Logo MDL 2026" class="logo">
-                -->
+        <!-- Étape 1: Destinataire -->
+        <div class="step active" id="step1">
+            <h2>Destinataire</h2>
+            <div class="input-group">
+                <input type="text" id="nom" placeholder="Nom et prénom" maxlength="50">
+                <div class="error" id="error-nom"></div>
             </div>
-            <h1>MDL 2026 - Roses de la Saint-Valentin</h1>
-            <p>Écrivez votre message anonyme pour la personne de votre choix</p>
+            <button class="btn btn-primary" onclick="validerNom()">Suivant</button>
         </div>
-        
-        <div class="step-indicator">
-            <div class="step active" id="step1">
-                <div class="step-circle">1</div>
-                <div class="step-label">Destinataire</div>
+
+        <!-- Étape 2: Message -->
+        <div class="step" id="step2">
+            <h2>Message</h2>
+            <div class="input-group">
+                <textarea id="message" placeholder="Votre message anonyme..." maxlength="250"></textarea>
+                <div class="char-count" id="char-count">0/250</div>
+                <div class="error" id="error-message"></div>
             </div>
-            <div class="step" id="step2">
-                <div class="step-circle">2</div>
-                <div class="step-label">Message</div>
-            </div>
-            <div class="step" id="step3">
-                <div class="step-circle">3</div>
-                <div class="step-label">Visualisation</div>
-            </div>
-            <div class="step" id="step4">
-                <div class="step-circle">4</div>
-                <div class="step-label">Confirmation</div>
+            <div>
+                <button class="btn btn-secondary" onclick="retourEtape1()">Retour</button>
+                <button class="btn btn-primary" onclick="validerMessage()">Visualiser</button>
             </div>
         </div>
-        
-        <div class="form-section">
-            <!-- Étape 1: Destinataire -->
-            <div class="form-step active" id="formStep1">
-                <h2 class="form-title">À qui s'adresse votre rose ?</h2>
-                <div class="form-group">
-                    <label for="recipientName">Nom et Prénom du destinataire</label>
-                    <input type="text" id="recipientName" class="form-control" placeholder="Ex: Dupont Marie" maxlength="50">
-                    <div class="char-counter"><span id="nameCounter">0</span>/50</div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn btn-primary btn-full" id="nextToStep2">Suivant <i class="fas fa-arrow-right"></i></button>
-                </div>
+
+        <!-- Étape 3: Visualisation -->
+        <div class="step" id="step3">
+            <h2>Vérification</h2>
+            
+            <div class="preview-paper paper-front">
+                <div class="logo-preview">❤️</div>
+                <div class="recipient-name" id="preview-nom"></div>
             </div>
             
-            <!-- Étape 2: Message -->
-            <div class="form-step" id="formStep2">
-                <h2 class="form-title">Votre message anonyme</h2>
-                <div class="form-group">
-                    <label for="message">Votre message d'amour / d'amitié</label>
-                    <textarea id="message" class="form-control" placeholder="Écrivez votre message ici... (maximum 250 caractères)" maxlength="250"></textarea>
-                    <div class="char-counter"><span id="messageCounter">0</span>/250</div>
-                </div>
-                <div class="action-buttons">
-                    <button class="btn btn-secondary" id="backToStep1"><i class="fas fa-arrow-left"></i> Retour</button>
-                    <button class="btn btn-primary" id="nextToStep3">Visualiser <i class="fas fa-eye"></i></button>
-                </div>
+            <div class="preview-paper">
+                <div class="message-content" id="preview-message"></div>
             </div>
             
-            <!-- Étape 3: Visualisation -->
-            <div class="form-step" id="formStep3">
-                <h2 class="form-title">Visualisation de votre message</h2>
-                <p style="text-align: center; margin-bottom: 20px; color: var(--gray);">Voici comment votre message sera imprimé sur la bande de papier.</p>
-                
-                <div class="preview-container">
-                    <div class="preview-title">
-                        <i class="fas fa-file-alt"></i> Recto (côté visible)
-                    </div>
-                    <div class="paper-preview">
-                        <div class="paper-front">
-                            <div class="logo-placeholder">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="recipient-name" id="previewRecipientName">Nom Prénom</div>
-                        </div>
-                    </div>
-                    
-                    <div class="preview-title" style="margin-top: 30px;">
-                        <i class="fas fa-file-alt"></i> Verso (côté message)
-                    </div>
-                    <div class="paper-preview">
-                        <div class="paper-back">
-                            <div class="message-content" id="previewMessage">Votre message apparaîtra ici...</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="btn btn-secondary" id="backToStep2"><i class="fas fa-edit"></i> Modifier</button>
-                    <button class="btn btn-success" id="nextToStep4">Valider <i class="fas fa-check"></i></button>
-                </div>
-            </div>
-            
-            <!-- Étape 4: Confirmation -->
-            <div class="form-step" id="formStep4">
-                <div class="confirmation-section">
-                    <div class="confirmation-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h2 class="confirmation-title">Message envoyé avec succès !</h2>
-                    <p class="confirmation-text">
-                        Votre message anonyme a été enregistré et sera imprimé sur une bande de papier.<br>
-                        Il sera distribué avec une rose lors de la Saint-Valentin.
-                    </p>
-                    <div class="action-buttons">
-                        <button class="btn btn-primary" id="newMessage"><i class="fas fa-redo"></i> Nouveau message</button>
-                    </div>
-                </div>
+            <div style="margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="retourEtape2()">Modifier</button>
+                <button class="btn btn-primary" onclick="confirmer()">Valider</button>
             </div>
         </div>
-        
-        <div class="footer">
-            MDL 2026 - Vente de roses Saint-Valentin • Distribution anonyme
+
+        <!-- Étape 4: Confirmation -->
+        <div class="step" id="step4">
+            <div class="confirmation">
+                <div class="confirmation-icon">✓</div>
+                <h3>Message envoyé !</h3>
+                <p>Votre rose sera distribuée avec ce message.</p>
+                <button class="btn btn-primary" onclick="nouveauMessage()">Nouveau message</button>
+            </div>
         </div>
     </div>
 
     <script>
-        // Variables DOM
-        const step1 = document.getElementById('step1');
-        const step2 = document.getElementById('step2');
-        const step3 = document.getElementById('step3');
-        const step4 = document.getElementById('step4');
-        
-        const formStep1 = document.getElementById('formStep1');
-        const formStep2 = document.getElementById('formStep2');
-        const formStep3 = document.getElementById('formStep3');
-        const formStep4 = document.getElementById('formStep4');
-        
-        const recipientNameInput = document.getElementById('recipientName');
-        const messageInput = document.getElementById('message');
-        const nameCounter = document.getElementById('nameCounter');
-        const messageCounter = document.getElementById('messageCounter');
-        const previewRecipientName = document.getElementById('previewRecipientName');
-        const previewMessage = document.getElementById('previewMessage');
-        
-        // Boutons de navigation
-        const nextToStep2Btn = document.getElementById('nextToStep2');
-        const backToStep1Btn = document.getElementById('backToStep1');
-        const nextToStep3Btn = document.getElementById('nextToStep3');
-        const backToStep2Btn = document.getElementById('backToStep2');
-        const nextToStep4Btn = document.getElementById('nextToStep4');
-        const newMessageBtn = document.getElementById('newMessage');
-        
-        // Variables d'état
-        let currentStep = 1;
-        
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCharacterCounters();
-            setupEventListeners();
+        // Variables globales
+        let nom = '';
+        let message = '';
+
+        // Gestionnaire d'événement pour la touche Entrée
+        document.getElementById('nom').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                validerNom();
+            }
         });
-        
-        function setupEventListeners() {
-            // Compteurs de caractères
-            recipientNameInput.addEventListener('input', updateCharacterCounters);
-            messageInput.addEventListener('input', updateCharacterCounters);
+
+        document.getElementById('message').addEventListener('input', function() {
+            const count = this.value.length;
+            const charCount = document.getElementById('char-count');
+            charCount.textContent = count + '/250';
+            if (count > 200) {
+                charCount.classList.add('warning');
+            } else {
+                charCount.classList.remove('warning');
+            }
+        });
+
+        // Fonctions de navigation
+        function validerNom() {
+            const input = document.getElementById('nom');
+            nom = input.value.trim();
             
-            // Navigation entre les étapes
-            nextToStep2Btn.addEventListener('click', goToStep2);
-            backToStep1Btn.addEventListener('click', goToStep1);
-            nextToStep3Btn.addEventListener('click', goToStep3);
-            backToStep2Btn.addEventListener('click', goToStep2);
-            nextToStep4Btn.addEventListener('click', goToStep4);
-            newMessageBtn.addEventListener('click', resetForm);
+            if (!nom) {
+                document.getElementById('error-nom').textContent = 'Veuillez entrer un nom';
+                document.getElementById('error-nom').style.display = 'block';
+                input.focus();
+                return;
+            }
             
-            // Validation en temps réel
-            recipientNameInput.addEventListener('blur', validateRecipientName);
-            messageInput.addEventListener('blur', validateMessage);
+            if (nom.length > 50) {
+                document.getElementById('error-nom').textContent = 'Trop long (max 50 caractères)';
+                document.getElementById('error-nom').style.display = 'block';
+                input.focus();
+                return;
+            }
+            
+            document.getElementById('error-nom').style.display = 'none';
+            document.getElementById('preview-nom').textContent = nom;
+            changerEtape(2);
         }
-        
-  
+
+        function validerMessage() {
+            const input = document.getElementById('message');
+            message = input.value.trim();
+            
+            if (!message) {
+                document.getElementById('error-message').textContent = 'Veuillez écrire un message';
+                document.getElementById('error-message').style.display = 'block';
+                input.focus();
+                return;
+            }
+            
+            if (message.length > 250) {
+                document.getElementById('error-message').textContent = 'Trop long (max 250 caractères)';
+                document.getElementById('error-message').style.display = 'block';
+                input.focus();
+                return;
+            }
+            
+            document.getElementById('error-message').style.display = 'none';
+            
+            // Ajuster la taille de la police selon la longueur du message
+            const preview = document.getElementById('preview-message');
+            preview.textContent = message;
+            
+            if (message.length > 200) {
+                preview.style.fontSize = '16px';
+            } else if (message.length > 150) {
+                preview.style.fontSize = '18px';
+            } else {
+                preview.style.fontSize = '20px';
+            }
+            
+            changerEtape(3);
+        }
+
+        function retourEtape1() {
+            changerEtape(1);
+        }
+
+        function retourEtape2() {
+            changerEtape(2);
+        }
+
+        function confirmer() {
+            changerEtape(4);
+        }
+
+        function nouveauMessage() {
+            // Réinitialiser le formulaire
+            document.getElementById('nom').value = '';
+            document.getElementById('message').value = '';
+            document.getElementById('char-count').textContent = '0/250';
+            document.getElementById('char-count').classList.remove('warning');
+            document.getElementById('error-nom').style.display = 'none';
+            document.getElementById('error-message').style.display = 'none';
+            
+            // Retour à l'étape 1
+            changerEtape(1);
+            
+            // Focus sur le premier champ
+            document.getElementById('nom').focus();
+        }
+
+        function changerEtape(numero) {
+            // Cacher toutes les étapes
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Afficher l'étape demandée
+            document.getElementById('step' + numero).classList.add('active');
+            
+            // Focus automatique
+            setTimeout(() => {
+                if (numero === 1) {
+                    document.getElementById('nom').focus();
+                } else if (numero === 2) {
+                    document.getElementById('message').focus();
+                }
+            }, 100);
+        }
+
+        // Focus initial
+        window.onload = function() {
+            document.getElementById('nom').focus();
+        };
+    </script>
+</body>
+                    </html>
