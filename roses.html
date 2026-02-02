@@ -15,44 +15,35 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8f9fa;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 500px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 80px; /* Espace pour le footer */
+            max-width: 600px;
+            margin: 0 auto;
+            flex: 1;
         }
 
         .header {
-            padding: 20px;
             text-align: center;
-            border-bottom: 2px solid #ffe6e6;
-            background: white;
+            margin-bottom: 30px;
         }
 
         .logo {
-            max-width: 120px;
-            max-height: 60px;
+            height: 80px;
+            width: auto;
             object-fit: contain;
             margin-bottom: 10px;
         }
 
         .step {
             display: none;
-            padding: 30px;
-            text-align: center;
         }
 
         .step.active {
@@ -66,9 +57,10 @@
         }
 
         h2 {
-            color: #e63946;
-            font-size: 22px;
+            color: #333;
+            font-size: 24px;
             margin-bottom: 25px;
+            text-align: center;
             font-weight: 600;
         }
 
@@ -78,25 +70,24 @@
 
         input, textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #ffe6e6;
-            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
             font-size: 16px;
             font-family: inherit;
-            transition: border-color 0.3s;
-            background: #fffafa;
+            background: white;
+            -webkit-appearance: none;
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: #e63946;
-            background: white;
         }
 
         textarea {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
-            white-space: pre-wrap; /* Permet les retours à la ligne */
+            line-height: 1.5;
         }
 
         .char-count {
@@ -106,20 +97,15 @@
             margin-top: 5px;
         }
 
-        .char-count.warning {
-            color: #ff6b6b;
-        }
-
         .btn {
-            padding: 12px 30px;
+            padding: 14px 35px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
             margin: 5px;
-            min-width: 120px;
         }
 
         .btn-primary {
@@ -129,114 +115,94 @@
 
         .btn-primary:hover:not(:disabled) {
             background: #d32f3d;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
         }
 
         .btn-primary:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
             cursor: not-allowed;
         }
 
         .btn-secondary {
-            background: #f8f9fa;
+            background: white;
             color: #333;
-            border: 2px solid #dee2e6;
+            border: 2px solid #ddd;
         }
 
         .btn-secondary:hover {
-            background: #e9ecef;
+            background: #f8f9fa;
         }
 
-        /* Aperçu réaliste pour l'impression */
-        .paper-preview {
+        /* Aperçu PDF réaliste */
+        .pdf-preview {
             background: white;
-            border-radius: 5px;
-            margin: 20px auto;
-            max-width: 400px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 2px;
+            margin: 25px auto;
+            max-width: 420px;
             overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
 
-        .paper-recto, .paper-verso {
-            padding: 40px 30px;
-            min-height: 200px;
+        .pdf-page {
+            padding: 40px;
             position: relative;
-            border: 1px solid #e0e0e0;
+            border-bottom: 1px dashed #eee;
         }
 
-        .paper-recto {
+        .pdf-page:last-child {
             border-bottom: none;
-            background: linear-gradient(to bottom, #fff, #f9f9f9);
         }
 
-        .paper-verso {
-            background: linear-gradient(to bottom, #f9f9f9, #fff);
-        }
-
-        .print-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
+        .pdf-logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-radius: 5px;
         }
 
-        .print-logo img {
+        .pdf-logo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
-        .print-recipient {
-            font-size: 24px;
+        .pdf-recipient {
+            font-size: 22px;
             font-weight: 700;
             color: #333;
             text-align: center;
-            margin-top: 10px;
+            margin: 10px 0;
+            line-height: 1.2;
             max-width: 300px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.2;
         }
 
-        .print-message {
-            font-size: 18px;
+        .pdf-message {
+            font-size: 17px;
             color: #333;
             text-align: center;
             line-height: 1.6;
-            max-width: 350px;
-            margin: 0 auto;
-            white-space: pre-wrap; /* Respecte les retours à la ligne */
+            white-space: pre-wrap;
             word-wrap: break-word;
+            padding: 10px;
         }
 
-        .print-watermark {
+        .pdf-label {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            opacity: 0.1;
-            font-size: 60px;
-            color: #e63946;
-            pointer-events: none;
-            z-index: 0;
-            font-weight: bold;
-        }
-
-        .paper-recto .print-watermark {
-            content: "MDL";
-        }
-
-        .paper-verso .print-watermark {
-            content: "❤️";
+            top: 10px;
+            left: 10px;
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .confirmation {
-            padding: 30px 20px;
+            padding: 40px 20px;
+            text-align: center;
         }
 
         .confirmation-icon {
@@ -249,7 +215,7 @@
             justify-content: center;
             margin: 0 auto 20px;
             color: white;
-            font-size: 35px;
+            font-size: 32px;
         }
 
         .error {
@@ -264,142 +230,144 @@
             color: #666;
             margin: 15px 0;
             font-size: 14px;
+            text-align: center;
         }
 
         .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px 20px;
+            margin-top: 40px;
             text-align: center;
             font-size: 12px;
-            color: #666;
-            border-top: 1px solid #ffe6e6;
-            backdrop-filter: blur(5px);
-            z-index: 1000;
+            color: #777;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
         }
 
         .footer-content {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
+            line-height: 1.6;
         }
 
         .footer-logo {
-            font-weight: bold;
+            font-weight: 600;
             color: #e63946;
         }
 
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
         @media (max-width: 480px) {
-            .container {
-                border-radius: 15px;
-                margin-bottom: 70px;
-            }
-            
-            .step {
-                padding: 20px;
+            body {
+                padding: 15px;
             }
             
             h2 {
-                font-size: 20px;
+                font-size: 22px;
             }
             
-            .btn {
-                padding: 10px 20px;
-                min-width: 100px;
-                font-size: 14px;
-            }
-            
-            .paper-recto, .paper-verso {
+            .pdf-page {
                 padding: 30px 20px;
             }
             
-            .print-message {
-                font-size: 16px;
-            }
-            
-            .print-recipient {
+            .pdf-recipient {
                 font-size: 20px;
             }
             
-            .footer {
-                padding: 10px 15px;
-                font-size: 11px;
+            .pdf-message {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+            
+            .logo {
+                height: 60px;
             }
         }
 
-        @media print {
-            .no-print {
-                display: none !important;
+        /* Styles pour mobile/tablette - amélioration UX */
+        @media (hover: none) and (pointer: coarse) {
+            input, textarea {
+                font-size: 16px; /* Empêche le zoom sur iOS */
             }
             
-            .paper-preview {
-                box-shadow: none;
-                border: 1px solid #ccc;
+            textarea {
+                min-height: 160px;
+            }
+            
+            .btn {
+                padding: 16px 40px;
+                min-height: 50px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <img src="https://raw.githubusercontent.com/Lost-Cyrano/mdl/refs/heads/main/Screenshot_2025-12-19-11-51-24-586_com.whatsapp-edit.jpg" 
-                 alt="Logo MDL 2026" class="logo">
-        </div>
-
         <!-- Étape 1: Destinataire -->
         <div class="step active" id="step1">
-            <h2>Destinataire</h2>
+            <div class="header">
+                <img src="https://raw.githubusercontent.com/Lost-Cyrano/mdl/refs/heads/main/Screenshot_2025-12-19-11-51-24-586_com.whatsapp-edit.jpg" 
+                     alt="MDL 2026" class="logo">
+            </div>
+            
+            <h2>À qui s'adresse votre rose ?</h2>
+            
             <div class="input-group">
                 <input type="text" id="nom" placeholder="Nom et prénom" maxlength="50" autocomplete="off">
                 <div class="error" id="error-nom"></div>
             </div>
-            <button class="btn btn-primary" onclick="validerNom()">Suivant</button>
+            
+            <div class="buttons-container">
+                <button class="btn btn-primary" onclick="validerNom()">Suivant</button>
+            </div>
         </div>
 
         <!-- Étape 2: Message -->
         <div class="step" id="step2">
-            <h2>Message</h2>
+            <h2>Votre message</h2>
+            
             <div class="input-group">
-                <textarea id="message" placeholder="Votre message anonyme... (Vous pouvez faire des retours à la ligne avec la touche Entrée)" 
+                <textarea id="message" placeholder="Écrivez votre message ici..." 
                           maxlength="250" rows="6"></textarea>
                 <div class="char-count" id="char-count">0/250</div>
                 <div class="error" id="error-message"></div>
             </div>
-            <div>
+            
+            <div class="buttons-container">
                 <button class="btn btn-secondary" onclick="retourEtape1()">Retour</button>
                 <button class="btn btn-primary" onclick="validerMessage()">Visualiser</button>
             </div>
         </div>
 
-        <!-- Étape 3: Visualisation -->
+        <!-- Étape 3: Visualisation PDF -->
         <div class="step" id="step3">
-            <h2>Aperçu pour impression</h2>
+            <h2>Aperçu impression</h2>
             
-            <div class="paper-preview">
-                <div class="paper-recto">
-                    <div class="print-watermark">MDL</div>
-                    <div class="print-logo">
+            <div class="pdf-preview">
+                <div class="pdf-page">
+                    <div class="pdf-label">Recto</div>
+                    <div class="pdf-logo">
                         <img src="https://raw.githubusercontent.com/Lost-Cyrano/mdl/refs/heads/main/Screenshot_2025-12-19-11-51-24-586_com.whatsapp-edit.jpg" 
-                             alt="Logo MDL" onerror="this.parentElement.innerHTML='❤️'; this.parentElement.style.fontSize='24px'; this.parentElement.style.color='#e63946';">
+                             alt="Logo MDL" onerror="this.parentElement.innerHTML='❤️'; this.parentElement.style.fontSize='24px';">
                     </div>
-                    <div class="print-recipient" id="preview-nom"></div>
+                    <div class="pdf-recipient" id="preview-nom"></div>
                 </div>
                 
-                <div class="paper-verso">
-                    <div class="print-watermark">❤️</div>
-                    <div class="print-message" id="preview-message"></div>
+                <div class="pdf-page">
+                    <div class="pdf-label">Verso</div>
+                    <div class="pdf-message" id="preview-message"></div>
                 </div>
             </div>
             
-            <div class="loading" id="loading-save">Enregistrement en cours...</div>
+            <div class="loading" id="loading-save">Enregistrement...</div>
             
-            <div style="margin-top: 20px;">
+            <div class="buttons-container">
                 <button class="btn btn-secondary" onclick="retourEtape2()">Modifier</button>
                 <button class="btn btn-primary" onclick="enregistrerMessage()" id="btn-valider">Valider</button>
             </div>
@@ -409,19 +377,11 @@
         <div class="step" id="step4">
             <div class="confirmation">
                 <div class="confirmation-icon">✓</div>
-                <h3>Message enregistré !</h3>
-                <p style="color: #666; margin-bottom: 20px;">Votre rose sera distribuée avec ce message.</p>
-                <button class="btn btn-primary" onclick="nouveauMessage()">Nouveau message</button>
-            </div>
-        </div>
-
-        <!-- Étape 5: Erreur -->
-        <div class="step" id="step5">
-            <div class="confirmation">
-                <div class="confirmation-icon" style="background: #e63946;">✗</div>
-                <h3>Erreur d'enregistrement</h3>
-                <p id="error-text" style="color: #666; margin-bottom: 20px;">Veuillez réessayer.</p>
-                <button class="btn btn-primary" onclick="retourEtape3()">Réessayer</button>
+                <h2>Message enregistré</h2>
+                <p style="color: #666; margin: 15px 0 25px;">Votre rose sera distribuée.</p>
+                <div class="buttons-container">
+                    <button class="btn btn-primary" onclick="nouveauMessage()">Nouveau message</button>
+                </div>
             </div>
         </div>
     </div>
@@ -440,41 +400,28 @@
         };
 
         // Initialiser Firebase
+        let database;
         try {
             firebase.initializeApp(firebaseConfig);
-            console.log("Firebase initialisé");
+            database = firebase.database();
         } catch (error) {
-            console.error("Erreur Firebase:", error);
+            console.error("Firebase error:", error);
         }
 
-        const database = firebase.database();
-
-        // Variables globales
+        // Variables
         let nom = '';
         let message = '';
-        let messageId = '';
 
         // Initialisation
         document.addEventListener('DOMContentLoaded', function() {
-            // Compteur de caractères pour le message
+            // Compteur de caractères
             const messageInput = document.getElementById('message');
             messageInput.addEventListener('input', function() {
                 const count = this.value.length;
-                const charCount = document.getElementById('char-count');
-                charCount.textContent = count + '/250';
-                charCount.className = 'char-count' + (count > 200 ? ' warning' : '');
+                document.getElementById('char-count').textContent = count + '/250';
             });
 
-            // Permettre les retours à la ligne avec Shift+Enter
-            messageInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault(); // Empêche le saut de ligne normal
-                    validerMessage(); // Passe à l'étape suivante
-                }
-                // Shift+Enter permet le retour à la ligne normal
-            });
-
-            // Entrée pour passer à l'étape suivante dans le champ nom
+            // Navigation par Entrée
             document.getElementById('nom').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
@@ -482,32 +429,41 @@
                 }
             });
 
+            // Pour mobile/tablette: gestion spéciale du textarea
+            messageInput.addEventListener('input', function() {
+                // Sauvegarde automatique du message en cours
+                message = this.value;
+            });
+
             // Focus initial
             setTimeout(() => {
                 document.getElementById('nom').focus();
-            }, 100);
+            }, 300);
         });
 
-        // Fonctions de navigation
+        // Fonctions
         function validerNom() {
             const input = document.getElementById('nom');
             nom = input.value.trim();
             
             if (!nom) {
                 showError('error-nom', 'Veuillez entrer un nom');
-                input.focus();
                 return;
             }
             
             if (nom.length > 50) {
-                showError('error-nom', 'Trop long (max 50 caractères)');
-                input.focus();
+                showError('error-nom', 'Maximum 50 caractères');
                 return;
             }
             
             hideError('error-nom');
             document.getElementById('preview-nom').textContent = nom;
             changerEtape(2);
+            
+            // Focus sur le textarea
+            setTimeout(() => {
+                document.getElementById('message').focus();
+            }, 100);
         }
 
         function validerMessage() {
@@ -516,29 +472,27 @@
             
             if (!message) {
                 showError('error-message', 'Veuillez écrire un message');
-                input.focus();
                 return;
             }
             
             if (message.length > 250) {
-                showError('error-message', 'Trop long (max 250 caractères)');
-                input.focus();
+                showError('error-message', 'Maximum 250 caractères');
                 return;
             }
             
             hideError('error-message');
             
-            // Afficher le message avec les retours à la ligne
+            // Aperçu avec retours à la ligne conservés
             const preview = document.getElementById('preview-message');
             preview.textContent = message;
             
-            // Ajuster la taille de la police selon la longueur
+            // Ajustement taille police
             if (message.length > 200) {
-                preview.style.fontSize = '16px';
+                preview.style.fontSize = '15px';
             } else if (message.length > 150) {
-                preview.style.fontSize = '17px';
+                preview.style.fontSize = '16px';
             } else {
-                preview.style.fontSize = '18px';
+                preview.style.fontSize = '17px';
             }
             
             changerEtape(3);
@@ -548,38 +502,35 @@
             const loading = document.getElementById('loading-save');
             const btnValider = document.getElementById('btn-valider');
             
-            // Désactiver le bouton et afficher le loading
             btnValider.disabled = true;
             loading.style.display = 'block';
             
             try {
-                // Générer un ID unique
-                messageId = 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                const messageId = 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
                 
-                // Préparer les données
                 const messageData = {
                     nom: nom,
                     message: message,
                     timestamp: Date.now(),
-                    date: new Date().toLocaleString('fr-FR'),
-                    formattedDate: new Date().toISOString().split('T')[0]
+                    date: new Date().toLocaleDateString('fr-FR'),
+                    heure: new Date().toLocaleTimeString('fr-FR')
                 };
                 
-                // Enregistrer dans Firebase
-                const ref = database.ref('messages/' + messageId);
-                await ref.set(messageData);
+                if (database) {
+                    const ref = database.ref('messages/' + messageId);
+                    await ref.set(messageData);
+                }
                 
-                console.log('Message enregistré:', messageId);
-                changerEtape(4);
+                // Petit délai pour UX
+                setTimeout(() => {
+                    changerEtape(4);
+                }, 500);
                 
             } catch (error) {
+                alert('Erreur de connexion. Veuillez réessayer.');
                 console.error('Erreur:', error);
-                document.getElementById('error-text').textContent = 
-                    'Erreur réseau. Vérifiez votre connexion internet.';
-                changerEtape(5);
-            } finally {
-                // Réactiver le bouton
                 btnValider.disabled = false;
+            } finally {
                 loading.style.display = 'none';
             }
         }
@@ -592,56 +543,54 @@
             changerEtape(2);
         }
 
-        function retourEtape3() {
-            changerEtape(3);
-        }
-
         function nouveauMessage() {
-            // Réinitialiser
+            // Réinitialisation
             document.getElementById('nom').value = '';
             document.getElementById('message').value = '';
             document.getElementById('char-count').textContent = '0/250';
-            document.getElementById('char-count').className = 'char-count';
             
-            // Retour à l'étape 1
             changerEtape(1);
             
-            // Focus
             setTimeout(() => {
                 document.getElementById('nom').focus();
             }, 100);
         }
 
         function changerEtape(numero) {
-            // Cacher toutes les étapes
+            // Animation simple
             document.querySelectorAll('.step').forEach(step => {
                 step.classList.remove('active');
             });
-            
-            // Afficher l'étape demandée
             document.getElementById('step' + numero).classList.add('active');
+            
+            // Scroll vers le haut
+            window.scrollTo(0, 0);
         }
 
         function showError(elementId, message) {
             const element = document.getElementById(elementId);
             element.textContent = message;
             element.style.display = 'block';
+            
+            // Focus sur l'élément en erreur
+            if (elementId === 'error-nom') {
+                document.getElementById('nom').focus();
+            } else if (elementId === 'error-message') {
+                document.getElementById('message').focus();
+            }
         }
 
         function hideError(elementId) {
             document.getElementById(elementId).style.display = 'none';
         }
 
-        // Protection basique
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))) {
-                e.preventDefault();
-            }
-        });
+        // Gestion tactile améliorée pour mobile
+        if ('ontouchstart' in window) {
+            // Agrandir les zones cliquables sur mobile
+            document.querySelectorAll('input, textarea, button').forEach(el => {
+                el.style.minHeight = '44px';
+            });
+        }
     </script>
 </body>
-</html>
+    </html>
